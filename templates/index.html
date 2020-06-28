@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>TDI Milestone Project TusarNanda</title>
+ <!--
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+-->
+<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+
+   <script src="https://cdn.bokeh.org/bokeh/release/bokeh-2.0.2.min.js"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.0.2.min.js"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.bokeh.org/bokeh/release/bokeh-tables-2.0.2.min.js"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.bokeh.org/bokeh/release/bokeh-x.y.z.min.js"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-x.y.z.min.js"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.bokeh.org/bokeh/release/bokeh-tables-x.y.z.min.js"
+        crossorigin="anonymous"></script>
+
+
+    {{ script | safe }}
+
+
+</head>
+
+<body>
+<!--
+<div class="topnav">
+  <a> Ticker App TusarNanda </a>
+  <a class="active" href="#home">Home</a>
+  <div class ="nav">
+      <a href="/contact.html">Contact</a>
+     </div>
+</div>
+
+
+
+  <h2>Top Navigation Example</h2>
+
+  <p>Some content..</p>
+</div>
+----->
+
+
+<div style="padding-left:16px">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<!--  <a class="navbar-brand" href="#">Navbar w/ text</a>
+---->
+	<a class="navbar-brand" <h2>TusarNanda Ticker App<h2></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="contact">Contact</a>
+      </li>
+
+    </ul>
+
+
+  </div>
+</nav>
+
+<div class="text-center">
+<h3>Stock plotter</h3>
+<p class="text-center">                             </p>
+
+ <h4> Please enter a stock ticker (e.g., IBM). {{stock}} </h4>
+    <form method="POST" action"/">
+        <div class="form-group">
+           <input type=""text" name="stock" required value="AAPL"><br>
+
+<!--
+<a href="{{ url_for('index') }}"><button>REFRESH</button></a>
+
+<div class="form-group">
+    <label for="exampleFormControlSelect2">Example multiple select</label>
+    <select multiple class="form-control" id="exampleFormControlSelect2">
+
+
+        <form method="POST" action"/">
+
+            <div class="form-group">
+                <label for="Month">Choose the month</label>
+        <select name="column" id="Month" class="form-control" required>
+            <option name="month" value=5 selected>May 2020</option>
+            <option name="month" value=4>Apr 2020</option>
+            <option name="month" value=3>Apr 2020</option>
+            <option name="month" value=2>Apr 2020</option>
+            <option name="month" value=1>Apr 2020</option>
+             <option name="month" value=12>Apr 2020</option>
+            <option name="month" value=11>Apr 2020</option>
+            <option name="month" value=10>Apr 2020</option>
+            <option name="month" value=9>Apr 2020</option>
+            <option name="month" value=8>Apr 2020</option>
+            <option name="month" value=7>Apr 2020</option>
+            <option name="month" value=6>Apr 2020</option>
+
+    </select>
+  </div>
+
+
+        </div>
+ -->
+
+            <h4> Please choose a month for the plot. </h4>
+            <label>
+              <input type="radio" name="month" value="1" checked='yes'/>Jan 20
+            </label>
+
+
+            <label>
+              <input type="radio" name="month" value="2"/>Feb 20
+            </label>
+
+
+            <label>
+              <input type="radio" name="month" value="3"/>Mar 20
+            </label>
+
+
+             <label>
+              <input type="radio" name="month" value="4"/>Apr 20
+            </label>
+
+            <br>
+            <label>
+              <input type="radio" name="month" value="5"/>May 20
+            </label>
+
+            <label>
+              <input type="radio" name="month" value="6"/>Jun 19
+            </label>
+
+             <label>
+              <input type="radio" name="month" value="7"/>Jul 19
+            </label>
+
+            <label>
+              <input type="radio" name="month" value="8"/>Aug 19
+            </label>
+            <br>
+            <label>
+              <input type="radio" name="month" value="9"/>Sep 19
+            </label>
+
+             <label>
+              <input type="radio" name="month" value="10"/>Oct 19
+            </label>
+
+            <label>
+              <input type="radio" name="month" value="11"/>Nov 19
+            </label>
+
+            <label>
+              <input type="radio" name="month" value="12"/>Dec 19
+            </label>
+            <br>
+
+   <form method= "POST" action = "/">
+
+    <div class="container">
+  <h4> The plot will show these prices</h4>
+
+
+
+<!--
+  <form>
+    <div class="checkbox">
+      <b>
+<label><input type="checkbox" name="plot_type" value="1" checked><b>Opening price</b></label>
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox" name="plot_type" value="2"  checked><b>Adjusted Opening price</b></label>
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox" name="plot_type" value="3" checked ><b>Closing price</b></label>
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox" name="plot_type" value="4" checked><b>Adjusted Closing price</b></label>
+    </div>
+    </b>
+    </form>
+
+    <form method= "POST" action = "/send">
+
+    </form>
+
+
+
+    <input class="btn btn-primary" type="submit" value="submit">
+
+
+-->
+ <h4> Please choose a price for the plot. </h4>
+
+        <label>
+              <input type="radio" name="plot_type" value="Opening Price" checked><b>Opening price</b></label>
+            </label>
+            <br>
+
+            <label>
+              <input type="radio" name="plot_type" value="Adjusted Opening Price"<b>Adjusted Opening price</b></label>
+            </label>
+            <br>
+
+            <label>
+              <input type="radio" name="plot_type" value="Closing Price"<b>Closing price</b></label>
+            </label>
+            <br>
+
+             <label>
+              <input type="radio" name="plot_type" value="Adjusted Closing Price"<b>Adjusted Closing price</b></label>
+            </label>
+
+            <br>
+            <label>
+              <input type="radio" name="plot_type" value="All"<b>All</b></label>
+            </label>
+            <br>
+   <input class="btn btn-primary" type="submit" value="submit">
+
+</form>
+     </div>
+<div class="centered" style=" width : 1700px; height : 500px;">
+    <div class="center">
+        <div class="row align-items-center justify-content-center">
+            <div class="centered" style=" width : 2100px; height : 500px;">
+    <div>
+<div style="padding-left:27px">
+
+
+        {{ div | safe }}
+
+
+
+    </div>
+</div>
+    </div>
+    </div>
+ </div>
+    </div>
+</body>
+</html>

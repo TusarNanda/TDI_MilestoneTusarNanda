@@ -1,0 +1,1 @@
+# TDI_MileStone project is about importing realtime information from a websource, contexual analysis of the data based on users' input and presentation of the analysis results  visually to the users on their specific demand.
